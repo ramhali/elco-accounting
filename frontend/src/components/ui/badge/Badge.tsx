@@ -1,4 +1,4 @@
-type BadgeVariant = "light" | "solid";
+type BadgeVariant = "light" | "solid" | "liquid";
 type BadgeSize = "sm" | "md";
 type BadgeColor =
   | "primary"
@@ -56,6 +56,15 @@ const Badge: React.FC<BadgeProps> = ({
       error: "bg-error-500 text-white dark:text-white",
       warning: "bg-warning-500 text-white dark:text-white",
       info: "bg-blue-light-500 text-white dark:text-white",
+      light: "bg-gray-400 dark:bg-white/5 text-white dark:text-white/80",
+      dark: "bg-gray-700 text-white dark:text-white",
+    },
+    liquid: {
+      success: "bg-green-50 text-green-700 dark:bg-green-500/15 dark:text-green-400", // asset
+      warning: "bg-orange-50 text-orange-700 dark:bg-orange-500/15 dark:text-orange-400", // liability
+      primary: "bg-purple-50 text-purple-700 dark:bg-purple-500/15 dark:text-purple-400", // equity
+      info: "bg-blue-50 text-blue-700 dark:bg-blue-500/15 dark:text-blue-400", // revenue
+      error: "bg-red-50 text-red-700 dark:bg-red-500/15 dark:text-red-400", // expense
       light: "bg-gray-400 dark:bg-white/5 text-white dark:text-white/80",
       dark: "bg-gray-700 text-white dark:text-white",
     },

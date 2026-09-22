@@ -15,8 +15,13 @@ import {
   TableIcon,
   UserCircleIcon,
 } from "../icons";
+import { 
+  TruckElectric,
+  Building,
+  UsersRound,
+  BookOpen,
+ } from "lucide-react";
 import { useSidebar } from "../context/SidebarContext";
-import SidebarWidget from "./SidebarWidget";
 
 type NavItem = {
   name: string;
@@ -40,6 +45,26 @@ const navItems: NavItem[] = [
     icon: <UserCircleIcon />,
     name: "User Profile",
     path: "/profile",
+  },
+  {
+    icon: <BookOpen />,
+    name: "Chart Of Accounts",
+    path: "/chart-of-accounts",
+  },
+  {
+    icon: <TruckElectric />,
+    name: "Suppliers",
+    path: "/suppliers",
+  },
+  {
+    icon: <UsersRound />,
+    name: "Employees",
+    path: "/employees",
+  },
+  {
+    icon: <Building />,
+    name: "Departments",
+    path: "/departments",
   },
   {
     name: "Forms",
@@ -368,7 +393,7 @@ const AppSidebar: React.FC = () => {
             </div>
           </div>
         </nav>
-        {isExpanded || isHovered || isMobileOpen ? <SidebarWidget /> : null}
+        {/* {isExpanded || isHovered || isMobileOpen ? <SidebarWidget /> : null} */}
       </div>
     </aside>
   );

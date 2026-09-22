@@ -22,6 +22,12 @@ interface TableBodyProps {
 interface TableRowProps {
   children: ReactNode; // Cells (th or td)
   className?: string; // Optional className for styling
+  onClick?: React.MouseEventHandler<HTMLTableRowElement>;
+  onKeyDown?: React.KeyboardEventHandler<HTMLTableRowElement>;
+  role?: React.AriaRole;
+  tabIndex?: number;
+  "aria-expanded"?: boolean;
+  "aria-label"?: string;
 }
 
 // Props for TableCell
@@ -47,8 +53,29 @@ const TableBody: React.FC<TableBodyProps> = ({ children, className }) => {
 };
 
 // TableRow Component
-const TableRow: React.FC<TableRowProps> = ({ children, className }) => {
-  return <tr className={className}>{children}</tr>;
+const TableRow: React.FC<TableRowProps> = ({
+  children,
+  className,
+  onClick,
+  onKeyDown,
+  role,
+  tabIndex,
+  "aria-expanded": ariaExpanded,
+  "aria-label": ariaLabel,
+}) => {
+  return (
+    <tr
+      className={className}
+      onClick={onClick}
+      onKeyDown={onKeyDown}
+      role={role}
+      tabIndex={tabIndex}
+      aria-expanded={ariaExpanded}
+      aria-label={ariaLabel}
+    >
+      {children}
+    </tr>
+  );
 };
 
 // TableCell Component

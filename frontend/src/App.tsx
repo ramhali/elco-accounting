@@ -18,6 +18,10 @@ import Blank from "./pages/Blank";
 import AppLayout from "./layout/AppLayout";
 import { ScrollToTop } from "./components/common/ScrollToTop";
 import Home from "./pages/Dashboard/Home";
+import SupplierSetup from "./pages/MasterData/Supplier";
+import EmployeeSetup from "./pages/MasterData/Employee";
+import DepartmentSetup from "./pages/MasterData/Department";
+import ChartOfAccountsSetup from "./pages/MasterData/ChartOfAccounts";
 
 export default function App() {
   return (
@@ -29,6 +33,13 @@ export default function App() {
           <Route element={<AppLayout />}>
             <Route index path="/" element={<Home />} />
 
+            {/* Master Data Page */}
+            <Route path="/suppliers" element={<SupplierSetup />} />
+            <Route path="/employees" element={<EmployeeSetup />} />
+            <Route path="/departments" element={<DepartmentSetup />} />
+
+            <Route path="/chart-of-accounts" element={<ChartOfAccountsSetup />} />
+            
             {/* Others Page */}
             <Route path="/profile" element={<UserProfiles />} />
             <Route path="/calendar" element={<Calendar />} />

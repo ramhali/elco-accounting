@@ -33,6 +33,7 @@ export async function login({
     const message =
       error.response?.data?.detail ||
       error.response?.data?.message ||
+      error.response?.data?.error ||
       "Invalid username or password.";
 
     throw new Error(message);
